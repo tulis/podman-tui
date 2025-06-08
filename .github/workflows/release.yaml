@@ -28,7 +28,6 @@ jobs:
           make binary
           ls -halF
           ls -halF ./bin
-          ls -halF ./bin/podman-tui
 
       # Zip the output folder
       - name: Zip output
@@ -36,8 +35,7 @@ jobs:
           set -ex
           ls -halF
           ls -halF ./bin
-          ls -halF ./bin/podman-tui
-          zip -r podman-tui-release-linux_arm64.zip ./bin/podman-tui/
+          zip -r podman-tui-release-linux_arm64.zip ./bin/
         working-directory: .
 
       # Create GitHub Release and upload zip
