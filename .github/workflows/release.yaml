@@ -24,11 +24,19 @@ jobs:
 
       - name: Build binary
         run: |
+          set -ex
           make binary
+          ls -halF
+          ls -halF ./bin
+          ls -halF ./bin/podman-tui
 
       # Zip the output folder
       - name: Zip output
         run: |
+          set -ex
+          ls -halF
+          ls -halF ./bin
+          ls -halF ./bin/podman-tui
           zip -r podman-tui-release-linux_arm64.zip ./bin/podman-tui/
         working-directory: .
 
